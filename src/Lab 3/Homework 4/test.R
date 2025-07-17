@@ -1,0 +1,5 @@
+user_lib <- Sys.getenv("R_LIBS_USER")
+if (!dir.exists(user_lib)) dir.create(user_lib, recursive = TRUE)
+.libPaths(user_lib)
+install.packages("BiocManager", repos = "https://cloud.r-project.org")
+BiocManager::install(c("limma", "Glimma", "edgeR", "Mus.musculus"))
